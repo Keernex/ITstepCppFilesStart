@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <windows.h>
+#include <vector>
 using namespace std;
 
 int main()
@@ -11,35 +11,39 @@ int main()
 
     fstream file_1("text_1.txt");
     fstream file_2("text_2.txt");
+
     if (file_1.is_open() && file_2.is_open())
     {
         while (getline(file_1, line))
         {
-            string lend[100];
-            for (int i = 0; i < line.length(); i++)
+            vector<string> words;
+            string word;
+            for (int i = 0; i <= line.length(); i++)
             {
-                if (line[i] == ' ' && lend->length() > 6)
+                if (line[i] == ' ' || line[i] == '\0')
                 {
-                    cout << lend;
-                    file_2 << lend;
-                    lend = "";
-                }
-                else if (line[i] == ' ' && lend->length() < 7)
-                {
-                    lend = "";
+                    if (word.length() >= 7)
+                    {
+                        cout << word;
+                        file_2 << word;
+                    }
+                    word = "";
                 }
                 else
                 {
-                    lend[i] = line[i];
+                    word += line[i];
                 }
-            }file_2 << endl;
+            }
+            file_2 << endl;
             cout << endl;
         }
+        file_1.close();
+        file_2.close();
     }
     else
     {
         cout << "Error" << endl;
     }
-    file_1.close();
-    file_2.close();
+
+    return 0;
 }
