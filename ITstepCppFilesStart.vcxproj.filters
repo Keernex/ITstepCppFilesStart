@@ -1,17 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Исходные файлы">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Файлы ресурсов">
+    <Filter Include="main">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="domain\models">
+      <UniqueIdentifier>{fedc04af-a093-41d0-830e-a28f60aeb47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\files">
+      <UniqueIdentifier>{3191fa43-5901-49d5-baae-a64986a44855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\models\Employees">
+      <UniqueIdentifier>{3da16582-f506-4bd4-8392-b2d31e6ea0bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="Employees.cpp">
+      <Filter>domain\models\Employees</Filter>
+    </ClCompile>
+    <ClCompile Include="FileProviderForEmployees.cpp">
+      <Filter>data\files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Employees.h">
+      <Filter>domain\models\Employees</Filter>
+    </ClInclude>
+    <ClInclude Include="FileProviderForEmployees.h">
+      <Filter>data\files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib.h">
+      <Filter>main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
