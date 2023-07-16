@@ -1,7 +1,7 @@
 #include "FileProviderForEmployees.h"
 
 fstream file;
-bool FileProviderForEmployees::Save_Employees(Employees* employees, int count = 1)
+bool FileProviderForEmployees::Save_Employees(Employees* employees, int count)
 {
 	file.open("test.bin", ios::out | ios::binary);
 	if (file.is_open())
