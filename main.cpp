@@ -13,9 +13,9 @@ void main()
 		cout << "2. Print employees" << endl;
 		cout << "3. Redaction employee index" << endl;
 		cout << "4. Search employee surname" << endl;
-		/*cout << "3. Save employees" << endl;
-		cout << "4. Load employees" << endl;*/
-		cout << "5. Exit" << endl;
+		cout << "5. Search employee age" << endl;
+		cout << "6. Delete employee" << endl;
+		cout << "7. Exit" << endl;
 		int menu;
 		cout << "Enter menu: ";
 		cin >> menu;
@@ -78,7 +78,7 @@ void main()
 			}
 			else
 			{
-				cout << "Add employees" << endl;
+				cout << "Error surname" << endl;
 			}
 		}break;
 		case 5:
@@ -92,22 +92,23 @@ void main()
 			}
 			else
 			{
-				cout << "Add employees" << endl;
+				cout << "Error age" << endl;
 			}
 		}break;
 		case 6:
 		{
-			cout << ": ";
+			cout << "Delete an employee by index: ";
 			int index;
 			cin >> index;
 			if (count != 0)
 			{
 				fileProviderEmployees.remove_employee(index, employees);
 				count--;
+				cout << "Remove employee" << endl;
 			}
 			else
 			{
-				cout << "Remove employees" << endl;
+				cout << "Error index" << endl;
 			}
 		}break;
 		case 7:
