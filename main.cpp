@@ -3,6 +3,7 @@
 void main()
 {
 	FileProviderEmployees fileProviderEmployees;
+	Employees employees_funk;
 	vector<Employees> employees;
 	int count = 0;
 	do
@@ -60,7 +61,7 @@ void main()
 			cin >> index;
 			if (index < count && index >= 0)
 			{
-				employees = fileProviderEmployees.redaction_employee_index(index,employees);
+				employees = employees_funk.redaction_employee_index(index,employees);
 			}
 			else 
 			{
@@ -74,7 +75,7 @@ void main()
 			cin >> surname;
 			if (count != 0)
 			{
-				fileProviderEmployees.search_employee_surname(surname, employees);
+				employees_funk.search_employee_surname(surname, employees);
 			}
 			else
 			{
@@ -88,7 +89,7 @@ void main()
 			cin >> age;
 			if (count != 0)
 			{
-				fileProviderEmployees.search_employee_age(age, employees);
+				employees_funk.search_employee_age(age, employees);
 			}
 			else
 			{
@@ -102,7 +103,7 @@ void main()
 			cin >> index;
 			if (count != 0)
 			{
-				fileProviderEmployees.remove_employee(index, employees);
+				employees_funk.remove_employee(index, employees);
 				count--;
 				cout << "Remove employee" << endl;
 			}
