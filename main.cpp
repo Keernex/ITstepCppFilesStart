@@ -6,7 +6,7 @@ void main()
 	Employees employees_funk;
 	vector<Employees> employees;
 	int count = 0;
-	fileProviderEmployees.load_employee(count, employees);
+	employees = fileProviderEmployees.load_employee(count, employees);
 	do
 	{
 		system("cls");
@@ -39,13 +39,13 @@ void main()
 			{
 				cout << "How many employees do you want to add?" << endl;
 				cout << "Enter count: ";
-				int new_count;
-				cin >> new_count;
-				employees.resize(count + new_count);
-				for (int i = count; i < count + new_count; i++)
+				int add_count;
+				cin >> add_count;
+				employees.resize(count + add_count);
+				for (int i = count; i < count + add_count; i++)
 				{
 					employees[i].input_employees(i);
-				}count = count + new_count;
+				}count = count + add_count;
 			}
 		}break;
 		case 2:

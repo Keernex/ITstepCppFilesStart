@@ -36,12 +36,13 @@ vector<Employees> FileProviderEmployees::load_employee(int &count,vector<Employe
         }
         file.close();
         cout << "Employees were loaded..." << endl;
+        return employees;
     }
     else
     {
         cout << "Error opening file!" << endl;
+        return employees;
     }
-    return employees;
 }
 
 
