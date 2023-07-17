@@ -1,8 +1,8 @@
 #include <conio.h>
-#include "FileProviderForEmployees.h"
+#include "FileProviderEmployees.h"
 void main()
 {
-	FileProviderForEmployees fileProviderForEmployees;
+	FileProviderEmployees fileProviderEmployees;
 	vector<Employees> employees;
 	int count = 0;
 	do
@@ -44,7 +44,6 @@ void main()
 				{
 					employees[i].input_employees(i);
 				}count = count + new_count;
-				cout << count << "count";
 			}
 		}break;
 		case 2:
@@ -61,7 +60,7 @@ void main()
 			cin >> index;
 			if (index < count && index >= 0)
 			{
-				employees = fileProviderForEmployees.redaction_employee_index(index,employees);
+				employees = fileProviderEmployees.redaction_employee_index(index,employees);
 			}
 			else 
 			{
@@ -75,7 +74,7 @@ void main()
 			cin >> surname;
 			if (count != 0)
 			{
-				fileProviderForEmployees.search_employee_surname(surname, employees);
+				fileProviderEmployees.search_employee_surname(surname, employees);
 			}
 			else
 			{
@@ -83,6 +82,35 @@ void main()
 			}
 		}break;
 		case 5:
+		{
+			cout << "Enter the age of the employee you want to see: ";
+			int age;
+			cin >> age;
+			if (count != 0)
+			{
+				fileProviderEmployees.search_employee_age(age, employees);
+			}
+			else
+			{
+				cout << "Add employees" << endl;
+			}
+		}break;
+		case 6:
+		{
+			cout << ": ";
+			int index;
+			cin >> index;
+			if (count != 0)
+			{
+				fileProviderEmployees.remove_employee(index, employees);
+				count--;
+			}
+			else
+			{
+				cout << "Remove employees" << endl;
+			}
+		}break;
+		case 7:
 		{
 			exit(0);
 		}break;

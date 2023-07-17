@@ -30,7 +30,7 @@
     <ClCompile Include="Employees.cpp">
       <Filter>domain\models\Employees</Filter>
     </ClCompile>
-    <ClCompile Include="FileProviderForEmployees.cpp">
+    <ClCompile Include="FileProviderEmployees.cpp">
       <Filter>data\files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="Employees.h">
       <Filter>domain\models\Employees</Filter>
     </ClInclude>
-    <ClInclude Include="FileProviderForEmployees.h">
+    <ClInclude Include="FileProviderEmployees.h">
       <Filter>data\files</Filter>
     </ClInclude>
     <ClInclude Include="lib.h">
