@@ -1,15 +1,30 @@
 #include "Employees.h"
 
-void Employees::input_employees(int index)
+vector<Employees> Employees::input_employees(int index, vector<Employees> employees)
 {
 	cout << endl;
 	cout << "Employee " << index+1 << endl;
 	cout << "Input name: ";
-	cin >> name;
+	cin >> employees[index].name;
 	cout << "Input surname: ";
-	cin >> surname;
+	cin >> employees[index].surname;
 	cout << "Input age: ";
-	cin >> age;
+	cin >> employees[index].age;
+    return employees;
+}
+
+vector<Employees> Employees::redaction_employee_index(int index, vector<Employees> employees)
+{
+    cout << endl;
+    cout << "Employee " << index + 1 << endl;
+    cout << "Enter new name: ";
+    cin >> employees[index].name;
+    cout << "Enter new surname: ";
+    cin >> employees[index].surname;
+    cout << "Enter new age: ";
+    cin >> employees[index].age;
+
+    return employees;
 }
 
 void Employees::print_employees(int index)
@@ -50,20 +65,6 @@ void Employees::search_employee_age(int age, vector<Employees> employees)
             cout << "Age: " << employees[i].age << endl;
         }
     }
-}
-
-vector<Employees> Employees::redaction_employee_index(int index, vector<Employees> employees)
-{
-    cout << endl;
-    cout << "Employee " << index + 1 << endl;
-    cout << "Enter new name: ";
-    cin >> employees[index].name;
-    cout << "Enter new surname: ";
-    cin >> employees[index].surname;
-    cout << "Enter new age: ";
-    cin >> employees[index].age;
-
-    return employees;
 }
 
 vector<Employees> Employees::remove_employee(int index, vector<Employees> employees)

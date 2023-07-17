@@ -10,7 +10,7 @@ void FileProviderEmployees::save_employee(vector<Employees>& employees)
 	{
 		int count = employees.size();
 		file.write(reinterpret_cast<char*>(&count), sizeof(int));
-		for (size_t i = 0; i < employees.size(); i++)
+		for (int i = 0; i < employees.size(); i++)
 		{
 			file.write(reinterpret_cast<char*>(&employees[i]), sizeof(Employees));
 		}
@@ -30,7 +30,7 @@ vector<Employees> FileProviderEmployees::load_employee(int &count,vector<Employe
     {
         file.read(reinterpret_cast<char*>(&count), sizeof(int));
         employees.resize(count);
-        for (size_t i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
             file.read(reinterpret_cast<char*>(&employees[i]), sizeof(Employees));
         }

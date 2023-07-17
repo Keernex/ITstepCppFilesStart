@@ -7,7 +7,7 @@ void main()
 	vector<Employees> employees;
 	int count = 0;
 	employees = fileProviderEmployees.load_employee(count, employees);
-	do
+	while (true)
 	{
 		system("cls");
 		cout << "Employees manager: " << endl;
@@ -32,7 +32,7 @@ void main()
 				employees.resize(count);
 				for (int i = 0; i < count; i++)
 				{
-					employees[i].input_employees(i);
+					employees[i].input_employees(i, employees);
 				}
 			}
 			else
@@ -41,11 +41,12 @@ void main()
 				cout << "Enter count: ";
 				int add_count;
 				cin >> add_count;
-				employees.resize(count + add_count);
 				for (int i = count; i < count + add_count; i++)
 				{
-					employees[i].input_employees(i);
-				}count = count + add_count;
+					count++;
+					employees.resize(count);
+					employees = employees[i].input_employees(i, employees);
+				}
 			}
 		}break;
 		case 2:
@@ -120,5 +121,5 @@ void main()
 		}break;
 		}
 		_getch();
-	} while (true);
+	}
 }
