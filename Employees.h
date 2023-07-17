@@ -3,10 +3,10 @@
 
 struct Employees
 {
-	char name[10];
-	char surname[10];
+	string name;
+	string surname;
 	int age;
 
-	void print();
-	void read();
+	void input_employees(int index);
+	void print_employees(int index);
 };

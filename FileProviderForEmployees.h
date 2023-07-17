@@ -3,7 +3,7 @@
 struct FileProviderForEmployees
 {
 	fstream file;
-	bool Save_Employees(Employees* employees, int count);
-	bool Load_Employees(Employees*& employees, int& count);
 
+	vector<Employees> redaction_employee_index(int index, vector<Employees> employees);
+	void search_employee_surname(string surname, vector<Employees> employees);
 };
