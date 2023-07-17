@@ -3,6 +3,6 @@
 struct FileProviderEmployees
 {
 	fstream file;
-	bool save_employee(Person* person, int count);
-	bool load_employee(Person*& person, int& count);
+	void save_employee(vector<Employees>& employees);
+	vector<Employees> load_employee(int &count, vector<Employees> employees);
 };

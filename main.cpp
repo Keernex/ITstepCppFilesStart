@@ -6,6 +6,7 @@ void main()
 	Employees employees_funk;
 	vector<Employees> employees;
 	int count = 0;
+	fileProviderEmployees.load_employee(count, employees);
 	do
 	{
 		system("cls");
@@ -114,6 +115,7 @@ void main()
 		}break;
 		case 7:
 		{
+			fileProviderEmployees.save_employee(employees);
 			exit(0);
 		}break;
 		}

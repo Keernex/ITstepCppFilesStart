@@ -3,49 +3,46 @@
 
 
 
-bool FileProviderEmployees::save_employee(Person* person, int count = 1)
+void FileProviderEmployees::save_employee(vector<Employees>& employees)
 {
 	file.open("test.bin", ios::out | ios::binary);
 	if (file.is_open())
 	{
-		file.write((char*)&count, sizeof(int));
-		for (size_t i = 0; i < count; i++)
+		int count = employees.size();
+		file.write(reinterpret_cast<char*>(&count), sizeof(int));
+		for (size_t i = 0; i < employees.size(); i++)
 		{
-			file.write((char*)&person[i], sizeof(Person));
+			file.write(reinterpret_cast<char*>(&employees[i]), sizeof(Employees));
 		}
 		file.close();
-		cout << "Person was saved..." << endl;
-		return true;
+		cout << "Employees were saved..." << endl;
 	}
 	else
 	{
 		cout << "Error opening file!" << endl;
-		return false;
 	}
 }
 
-bool FileProviderEmployees::load_employee(Person*& person, int& count)
+vector<Employees> FileProviderEmployees::load_employee(int &count,vector<Employees> employees)
 {
-	file.open("test.bin", ios::in | ios::binary);
-	file.read((char*)&count, sizeof(int));
-	person = new Person[count];
-	if (file.is_open())
-	{
-		for (size_t i = 0; i < count; i++)
-		{
-			file.read((char*)&person[i], sizeof(Person));
-		}
-		file.close();
-		cout << "Person was loaded..." << endl;
-		return true;
-	}
-	else
-	{
-		cout << "Error opening file!" << endl;
-		return false;
-	}
+    file.open("test.bin", ios::in | ios::binary);
+    if (file.is_open())
+    {
+        file.read(reinterpret_cast<char*>(&count), sizeof(int));
+        employees.resize(count);
+        for (size_t i = 0; i < count; i++)
+        {
+            file.read(reinterpret_cast<char*>(&employees[i]), sizeof(Employees));
+        }
+        file.close();
+        cout << "Employees were loaded..." << endl;
+    }
+    else
+    {
+        cout << "Error opening file!" << endl;
+    }
+    return employees;
 }
-
 
 
 
