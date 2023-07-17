@@ -25,29 +25,41 @@ void main()
 		{
 		case 1:
 		{
-			if (employees.size() == 0)
+			//if (employees.size() == 0)
+			//{
+			//	cout << "Enter count: ";
+			//	cin >> count;
+			//	employees.resize(count);
+			//	for (int i = 0; i < count; i++)
+			//	{
+			//		employees[i].input_employees(i, employees);
+			//	}
+			//}
+			//else
+			//{
+			//	cout << "How many employees do you want to add?" << endl;
+			//	cout << "Enter count: ";
+			//	int add_count;
+			//	cin >> add_count;
+			//	for (int i = count; i < count + add_count; i++)
+			//	{
+			//		count++;
+			//		employees.resize(count);
+			//		cout << count << endl;
+			//		employees = employees_funk.input_employees(i, employees);
+			//	}
+			//}
+			cout << "Enter the number of employees to add: ";
+			int addCount;
+			cin >> addCount;
+			count = employees.size() + 1;
+			for (int i = count; i < count + addCount; i++)
 			{
-				cout << "Enter count: ";
-				cin >> count;
-				employees.resize(count);
-				for (int i = 0; i < count; i++)
-				{
-					employees[i].input_employees(i, employees);
-				}
+				Employees newEmployee;
+				newEmployee.input_employees(i);
+				employees.push_back(newEmployee);
 			}
-			else
-			{
-				cout << "How many employees do you want to add?" << endl;
-				cout << "Enter count: ";
-				int add_count;
-				cin >> add_count;
-				for (int i = count; i < count + add_count; i++)
-				{
-					count++;
-					employees.resize(count);
-					employees = employees[i].input_employees(i, employees);
-				}
-			}
+			count = employees.size();
 		}break;
 		case 2:
 		{
@@ -63,9 +75,9 @@ void main()
 			cin >> index;
 			if (index < count && index >= 0)
 			{
-				employees = employees_funk.redaction_employee_index(index,employees);
+				employees = employees_funk.redaction_employee_index(index, employees);
 			}
-			else 
+			else
 			{
 				cout << "Error index" << endl;
 			}
@@ -105,7 +117,7 @@ void main()
 			cin >> index;
 			if (count != 0)
 			{
-				employees_funk.remove_employee(index, employees);
+				employees = employees_funk.remove_employee(index, employees);
 				count--;
 				cout << "Remove employee" << endl;
 			}

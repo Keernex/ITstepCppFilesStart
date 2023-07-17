@@ -1,16 +1,15 @@
 #include "Employees.h"
 
-vector<Employees> Employees::input_employees(int index, vector<Employees> employees)
+void Employees::input_employees(int index)
 {
 	cout << endl;
 	cout << "Employee " << index+1 << endl;
 	cout << "Input name: ";
-	cin >> employees[index].name;
+	cin >> name;
 	cout << "Input surname: ";
-	cin >> employees[index].surname;
+	cin >> surname;
 	cout << "Input age: ";
-	cin >> employees[index].age;
-    return employees;
+	cin >> age;
 }
 
 vector<Employees> Employees::redaction_employee_index(int index, vector<Employees> employees)
@@ -23,7 +22,6 @@ vector<Employees> Employees::redaction_employee_index(int index, vector<Employee
     cin >> employees[index].surname;
     cout << "Enter new age: ";
     cin >> employees[index].age;
-
     return employees;
 }
 

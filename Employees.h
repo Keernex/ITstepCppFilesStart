@@ -7,7 +7,7 @@ struct Employees
 	string surname;
 	int age;
 
-	vector<Employees> input_employees(int index, vector<Employees> employees);
+	void input_employees(int index);
 	vector<Employees> redaction_employee_index(int index, vector<Employees> employees);
 	void print_employees(int index);
 	void search_employee_surname(string surname, vector<Employees> employees);
