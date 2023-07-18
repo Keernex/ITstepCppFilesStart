@@ -128,6 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Login.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intro_screen_provider.h" />
+    <ClInclude Include="Intro_screen.h" />
+    <ClInclude Include="Intro_file_work.h" />
+    <ClInclude Include="lib.h" />
+    <ClInclude Include="Login.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
