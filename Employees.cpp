@@ -25,7 +25,7 @@ vector<Employees> Employees::redaction_employee_index(int index, vector<Employee
     return employees;
 }
 
-void Employees::print_employees(/*int index*/)
+void Employees::print_employees(int index)
 {
 	cout << endl;
 	cout << "Employee " << index + 1 << endl;

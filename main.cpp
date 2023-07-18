@@ -6,7 +6,7 @@ void main()
 	Employees employees_funk;
 	vector<Employees> employees;
 	int count = 0;
-	employees = fileProviderEmployees.load_employee(count, employees);
+	fileProviderEmployees.load_employee(employees, count);
 	while (true)
 	{
 		system("cls");
@@ -25,41 +25,28 @@ void main()
 		{
 		case 1:
 		{
-			//if (employees.size() == 0)
-			//{
-			//	cout << "Enter count: ";
-			//	cin >> count;
-			//	employees.resize(count);
-			//	for (int i = 0; i < count; i++)
-			//	{
-			//		employees[i].input_employees(i, employees);
-			//	}
-			//}
-			//else
-			//{
-			//	cout << "How many employees do you want to add?" << endl;
-			//	cout << "Enter count: ";
-			//	int add_count;
-			//	cin >> add_count;
-			//	for (int i = count; i < count + add_count; i++)
-			//	{
-			//		count++;
-			//		employees.resize(count);
-			//		cout << count << endl;
-			//		employees = employees_funk.input_employees(i, employees);
-			//	}
-			//}
-			cout << "Enter the number of employees to add: ";
-			int addCount;
-			cin >> addCount;
-			count = employees.size() + 1;
-			for (int i = count; i < count + addCount; i++)
+			if (employees.size() == 0)
 			{
-				Employees newEmployee;
-				newEmployee.input_employees(i);
-				employees.push_back(newEmployee);
+				cout << "Enter count: ";
+				cin >> count;
+				employees.resize(count);
+				for (int i = 0; i < count; i++)
+				{
+					employees[i].input_employees(i);
+				}
 			}
-			count = employees.size();
+			else
+			{
+				cout << "How many employees do you want to add?" << endl;
+				cout << "Enter count: ";
+				int add_count;
+				cin >> add_count;
+				employees.resize(count + add_count);
+				for (int i = count; i < count + add_count; i++)
+				{
+					employees[i].input_employees(i);
+				}count = employees.size();
+			}
 		}break;
 		case 2:
 		{
@@ -128,7 +115,7 @@ void main()
 		}break;
 		case 7:
 		{
-			fileProviderEmployees.save_employee(employees);
+			fileProviderEmployees.save_employee(employees, count);
 			exit(0);
 		}break;
 		}
