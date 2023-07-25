@@ -33,17 +33,17 @@ void main()
 		}
 		if (select == 1)
 		{
-			int count;
+			int select;
 			cout << "input count: ";
-			while (!(std::cin >> count))
+			while (!(std::cin >> select))
 			{
 				cout << "input count: ";
 				cin.clear();
 				while (cin.get() != '\n')
 					continue;
 			}
-			boards.resize(count_boards + count);
-			for (int i = count_boards; i < count_boards + count; i++)
+			boards.resize(count_boards + select);
+			for (int i = count_boards; i < count_boards + select; i++)
 			{
 				boards[i].input_board(i);
 			}
