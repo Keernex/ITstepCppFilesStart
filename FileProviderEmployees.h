@@ -3,6 +3,7 @@
 struct FileProviderEmployees
 {
 	fstream file;
-	bool save_employee(vector<Employees> employees, int count);
-	bool load_employee(vector<Employees>& employees, int& count);
+	bool Check_file_empty(string filename);
+	bool save_elements(vector<Employees> employees, int count);
+	bool load_elements(vector<Employees>& employees, int& count);
 };

@@ -127,9 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Employees.cpp" />
     <ClCompile Include="FileProviderEmployees.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Employees.h" />
