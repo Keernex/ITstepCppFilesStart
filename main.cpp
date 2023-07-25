@@ -1,6 +1,5 @@
 #include "file_all_functions.h"
 #include <conio.h>
-#include "main.h"
 
 void main()
 {
@@ -33,21 +32,24 @@ void main()
 		}
 		if (select == 1)
 		{
-			int select;
+			int count;
 			cout << "input count: ";
-			while (!(std::cin >> select))
+			while (!(std::cin >> count))
 			{
 				cout << "input count: ";
 				cin.clear();
 				while (cin.get() != '\n')
 					continue;
 			}
-			boards.resize(count_boards + select);
-			for (int i = count_boards; i < count_boards + select; i++)
+			vector<string> names;
+			names.resize(count);
+			for (int i = 0; i < count; i++)
 			{
-				boards[i].input_board(i);
+				cout << "name: ";
+				getline(cin, names[i]);
 			}
-			count_boards = boards.size();
+
+			boards.assign(names.begin(), names.end());
 			//save
 		}
 		if (select == 2 && boards.size() > 0)

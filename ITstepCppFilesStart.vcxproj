@@ -26,7 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boards.h" />
-    <ClInclude Include="main.h" />
     <ClInclude Include="tasks.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="file_all_functions.h" />

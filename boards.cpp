@@ -11,6 +11,7 @@ void Board::input_board(int index)
 void Board::print_board(int index,int count_tasks)
 {
 	cout << endl;
+	cout << "Board name: " << index << endl;
 	cout << "Board name: " << name;
 	/*for (int i = 0; i < count_tasks; i++)
 	{
