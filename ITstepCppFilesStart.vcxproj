@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="boards.cpp" />
+    <ClCompile Include="file_all_functions.cpp" />
+    <ClCompile Include="tasks.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boards.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="tasks.h" />
+    <ClInclude Include="lib.h" />
+    <ClInclude Include="file_all_functions.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
